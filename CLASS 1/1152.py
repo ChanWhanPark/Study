@@ -1,4 +1,4 @@
-## 1152. 단어의 개수 (2024.1.1)
+## 1152. 단어의 개수 (2024.1.1) / B2
 string = input();
 length = len(string);
 count = 0;
