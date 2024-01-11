@@ -11,7 +11,6 @@ while (1):
     for s in string:
       if (s == "("):
         small_flag += 1;
-        if ()
       elif (s == ")"):
         small_flag -= 1;
       elif (s == "["):
