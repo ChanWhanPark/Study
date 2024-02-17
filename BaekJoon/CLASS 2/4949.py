@@ -1,30 +1,28 @@
-## 4949. 균형잡힌 세상 (2024.1.10) / S4 (예외 케이스 존재 : '([)]')
+## 4949. 균형잡힌 세상 (2024.1.10) / S4 -> (2024.2.17)
+while(1):
+  word=input()
 
-while (1):
-  small_flag = 0;
-  big_flag = 0;
-  small_or_big = 0;
+  stack=[] # 괄호를 추가할 리스트 stack
+  if word=='.': # . 이 들어오면 종료
+    break
 
-  string = input();
-  if (string == '.'): break;
-  else:
-    for s in string:
-      if (s == "("):
-        small_flag += 1;
-      elif (s == ")"):
-        small_flag -= 1;
-      elif (s == "["):
-        big_flag += 1;
-      elif (s == "]"):
-        big_flag -= 1;
-  
-      if small_flag < 0 or big_flag < 0:
+  for w in word:
+    if w=='(' or w=='[': # 여는 괄호가 오면 stack에 추가
+      stack.append(w)
+    elif w==')': # ) 인 경우
+      if len(stack)!=0 and stack[-1]=='(': # stack이 비어있지 않고, 마지막 요소가 ( 이면 pop
+        stack.pop()
+      else: # stack이 비어있거나 짝이 맞지 않으면 stack에 )을 추가하고 break
+        stack.append(w)
         break;
-  
-      if small_flag * big_flag < 0:
+    elif w==']': # ] 인 경우
+      if len(stack)!=0 and stack[-1]=='[': # stack이 비어있지 않고, 마지막 요소가 [ 이면 pop
+        stack.pop()
+      else: # stack이 비어있거나 짝이 맞지 않으면 stack에 ]을 추가하고 break
+        stack.append(w)
         break;
 
-  if (small_flag == 0 and big_flag == 0):
-    print("yes");
-  else:
-    print("no")
+  if len(stack)==0: # stack이 비어있으면 모든 괄호들의 균형이 맞으므로 Yes 출력
+    print('yes')
+  else: # stack이 비어있지 않으면 괄호들의 균형이 맞지 않는 것이므로 No 출력
+    print('no')
