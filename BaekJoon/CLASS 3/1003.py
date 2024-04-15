@@ -19,11 +19,7 @@ fibo(4)  2 3 3
 '''
 
 def fibo(n):
-  if d[n] != -1:
-    return
-  
   for i in range(2, n+1):
-    d[i] = d[i-1] + d[i-2]
     zero_count[i] = zero_count[i-1] + zero_count[i-2];
     one_count[i] = one_count[i-1] + one_count[i-2];
 
