@@ -8,7 +8,8 @@ for i in range(network):
   a, b = map(int, input().split())
   graph[a].append(b)
   graph[b].append(a) # 양방향 그래프 입력
-  
+
+print(graph);
 visited = [False] * (computer + 1)
 count = 0
 
