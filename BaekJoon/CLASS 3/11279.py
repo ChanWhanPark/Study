@@ -1,7 +1,8 @@
-## 1927. 최소 힙 (2024.5.19) | S2
+## 11279. 최대 힙 (2024.5.25) | S2
 import sys
 import heapq
 input = sys.stdin.readline
+
 N = int(input())
 
 heap = []
@@ -11,8 +12,10 @@ for _ in range(N):
   
   if x == 0:
     if len(heap):
-      print(heapq.heappop(heap))
+      value = (heapq.heappop(heap))
+      print(value[1])
     else:
-      print(0)  
+      print(0)
+      
   else:
-    heapq.heappush(heap, x)
+    heapq.heappush(heap, [-x, x])
