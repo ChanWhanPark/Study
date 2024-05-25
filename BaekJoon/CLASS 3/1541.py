@@ -5,11 +5,16 @@
 '''
 math_string = input().split('-');
 num = 0
+print(math_string)
 
 for i in math_string[0].split('+'):
+  print(i)
   num += int(i)
+  
 for i in math_string[1:]:
+  print(i)
   for j in i.split('+'):
+    print(j)
     num -= int(j)
     
 print(num);

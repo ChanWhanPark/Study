@@ -11,6 +11,7 @@ for _ in range(N):
   
   if x == 0:
     if len(heap):
+      print(len(heap))
       print(heapq.heappop(heap))
     else:
       print(0)  
