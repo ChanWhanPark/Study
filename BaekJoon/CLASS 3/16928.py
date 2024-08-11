@@ -31,13 +31,13 @@ def BFS(start):
       next = current + i 
       
       if 0 < next <= 100 and not visited[next]:
-        if next in ladders:
-          next = ladders[next]
+        if next in ladders: # 사다리에 있으면
+          next = ladders[next] # 다음 사다리칸으로
           
-        if next in snakes:
-          next = snakes[next]
+        if next in snakes: # 뱀에 있으면
+          next = snakes[next] # 다음 뱀칸으로
           
-        if not visited[next]:
+        if not visited[next]: # 방문하지 않았다면
           q.append(next)
           visited[next] = True
           board[next] = board[current] + 1
